@@ -10,7 +10,7 @@ Of course, you may don't want to getting an annoying alarm at 1:00 AM, so you ca
 
 **Do not Sleep**'s objective is *NOT* a full-auto wake up call, *NOT* a solution of productivity increasement, just **coach** your habit. 
 
-**Do not Sleep** basically needs smart devices. So I'm planning to support as much as I can. There are lots of smart devices like Apple's Apple Watch Series, Samsung's Galaxy Gear Series, LG's LG Watch, Shaomi's Mi Band, and more.
+**Do not Sleep** basically requires smart devices. So I'm planning to support as much as I can. There are lots of smart devices like Apple's Apple Watch Series, Samsung's Galaxy Gear Series, LG's LG Watch, Xiaomi's Mi Band, and more.
 
 ## Developers ::
 
