@@ -14,8 +14,8 @@ Of course, you may don't want to getting an annoying alarm at 1:00 AM, so you ca
 
 ## Developers ::
 
-|-------------------|-------------------|
-|member             |role               |
-|-------------------|-------------------|
-|@Lailac3257        |Lead, iOS Developer|
-|-------------------|-------------------|
+------------------- | -------------------
+member              | role               
+------------------- | -------------------
+@Lailac3257         | Lead, iOS Developer
+------------------- | -------------------
