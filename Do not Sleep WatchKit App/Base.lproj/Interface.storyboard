@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pjV-Uu-yi3">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
+    </dependencies>
+    <scenes>
+        <!--CM Test-->
+        <scene sceneID="zod-Cj-dch">
+            <objects>
+                <controller title="CM Test" id="pjV-Uu-yi3" customClass="TestInterfaceController" customModule="Do_not_Sleep_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Accelerometer :" id="BEN-MX-s7L"/>
+                        <label width="1" alignment="left" text="(x, y, z)" id="8ul-Qe-LQi"/>
+                        <separator alignment="left" id="TtG-Lx-RJ8"/>
+                        <label alignment="left" text="Gyro :" id="ScM-Pl-ZwY"/>
+                        <label width="1" alignment="left" text="(x, y, z)" id="4eI-ev-Jcr"/>
+                        <separator alignment="left" id="LV8-mL-NUw"/>
+                        <label alignment="left" text="Device Motion :" id="NVM-wP-Z7j"/>
+                        <label width="1" alignment="left" text="(x, y, z)" id="ZNj-Nb-FcX"/>
+                        <separator alignment="left" id="yDl-0P-7C1"/>
+                        <label alignment="left" text="Magnetometer :" id="7uX-S9-9B7"/>
+                        <label alignment="left" text="(x,y,z)" id="WHS-Hx-ib0"/>
+                        <separator alignment="left" id="rYM-rS-QWJ"/>
+                        <label alignment="left" text="Heartbeat :" id="lFN-kL-yVy"/>
+                        <label alignment="left" text="--BPM" id="DjH-7P-nE0"/>
+                    </items>
+                    <connections>
+                        <outlet property="accelerometerLabel" destination="8ul-Qe-LQi" id="SHi-fr-tyP"/>
+                        <outlet property="deviceMotionLabel" destination="ZNj-Nb-FcX" id="hp6-hE-agT"/>
+                        <outlet property="gyroLabel" destination="4eI-ev-Jcr" id="sna-Qp-9hR"/>
+                        <outlet property="heartbeatLabel" destination="DjH-7P-nE0" id="0Da-Qn-HCC"/>
+                        <outlet property="magnetometerLabel" destination="WHS-Hx-ib0" id="7ut-d5-iIB"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="50"/>
+        </scene>
+        <!--DO NOT SLEEP-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller title="DO NOT SLEEP" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Do_not_Sleep_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" height="20" alignment="left" text="오늘 일과시간 동안..." textAlignment="center" id="W47-TO-7sj"/>
+                        <label width="1" height="72" alignment="left" text="3분" textAlignment="center" id="5x4-YV-st0">
+                            <fontDescription key="font" type="system" weight="ultraLight" pointSize="56"/>
+                        </label>
+                        <label width="1" height="22" alignment="left" text="졸거나 주무셨습니다." textAlignment="center" id="6hJ-jz-ey9"/>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="자세히" id="TIt-vP-BXp">
+                            <connections>
+                                <action selector="didSelectDetailButton" destination="AgC-eL-Hgc" id="2S1-1Y-dCh"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="sleepTimeLabel" destination="5x4-YV-st0" id="0A3-30-nut"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="353"/>
+        </scene>
+        <!--자세히-->
+        <scene sceneID="xL4-66-L7c">
+            <objects>
+                <controller identifier="DetailInterfaceController" title="자세히" id="fEG-Ch-gar" customClass="DetailInterfaceController" customModule="Do_not_Sleep_WatchKit_Extension">
+                    <items>
+                        <label width="1" height="38" alignment="left" text="3분" textAlignment="center" id="ez7-Lf-Nrp">
+                            <fontDescription key="font" type="system" weight="thin" pointSize="36"/>
+                        </label>
+                        <separator alignment="left" id="KuJ-FQ-vGj"/>
+                        <label width="1" alignment="left" numberOfLines="12" id="GSK-CL-Arm">
+                            <string key="text">일과시간 동안 졸지 않는 것은 당연합니다. 
+평소보다 덜했다 하더라도, 아예 졸지 않는 것이 가장 중요합니다. 
+0분을 목표로, 계속 노력하세요.</string>
+                        </label>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="확인" id="bla-8n-eXY">
+                            <connections>
+                                <action selector="didSelectedConfirmButton" destination="fEG-Ch-gar" id="XUU-hB-Ka5"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="guideLabel" destination="GSK-CL-Arm" id="HvM-ge-O5d"/>
+                        <outlet property="sleepTimeLabel" destination="ez7-Lf-Nrp" id="6w6-Qh-HFr"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="379"/>
+        </scene>
+        <!--Detected Sleeping Interface Controller-->
+        <scene sceneID="vzJ-6o-6xU">
+            <objects>
+                <controller id="MrZ-1s-66g" customClass="DetectedSleepingInterfaceController" customModule="Do_not_Sleep_WatchKit_Extension">
+                    <items>
+                        <label width="1" height="52" alignment="left" text="졸음 감지" textAlignment="center" numberOfLines="2" id="hwH-KO-QbD">
+                            <color key="textColor" red="0.67455112934112549" green="0.15692374110221863" blue="0.10914970934391022" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" weight="black" pointSize="32"/>
+                        </label>
+                        <label width="1" alignment="left" text="졸은 시간 : 3분" textAlignment="center" id="Wk8-xa-3j7"/>
+                        <label width="1" height="25" alignment="left" text="당장 일어나십시오!" textAlignment="center" id="N6Y-3a-dSg"/>
+                        <switch width="1" alignment="left" verticalAlignment="bottom" title="깼습니다." id="Gcf-Mz-u1q"/>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="확인" enabled="NO" id="VY0-lV-uWS"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="716" y="360"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="863"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Do_not_Sleep_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="863"/>
+        </scene>
+    </scenes>
+</document>
